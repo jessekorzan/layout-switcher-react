@@ -1,0 +1,90 @@
+@import url("https://fonts.googleapis.com/css?family=Heebo:400,600,700");
+html {
+  box-sizing: border-box; }
+
+*, *:before, *:after {
+  box-sizing: inherit; }
+
+body {
+  background: #f5f3f3;
+  color: #2b2929;
+  font-family: "Heebo", sans-serif;
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: 400;
+  margin: 0;
+  padding: 0; }
+
+h1, p {
+  margin: 0 0 22px; }
+
+button {
+  border: none;
+  background: #0090ff;
+  color: #e6f4ff;
+  border: 1px solid #0090ff;
+  padding: 16px 16px;
+  border-radius: 2px;
+  text-transform: uppercase;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 4px;
+  min-width: 200px;
+  cursor: pointer;
+  transition: all 260ms ease-in-out; }
+  button.on {
+    color: #0090ff;
+    background: rgba(0, 144, 255, 0.25); }
+  button:focus {
+    outline: none; }
+  button:active {
+    background: rgba(0, 144, 255, 0.25); }
+
+.block {
+  display: block;
+  background: #fff;
+  padding: 22px;
+  margin-bottom: 8px;
+  overflow-y: scroll; }
+
+.grid {
+  padding: 12px;
+  grid-gap: 8px;
+  height: 100vh; }
+  @media (min-width: 600px) {
+    .grid {
+      display: grid; }
+      .grid > * {
+        margin: 0; } }
+  .grid.swimlanes {
+    grid-template-columns: repeat(8, minmax(480px, 1fr)); }
+  .grid.newspaper {
+    grid-template-columns: auto minmax(300px, auto) 420px;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    height: 100vh; }
+    .grid.newspaper > *:nth-child(1) {
+      grid-row: span 4; }
+    .grid.newspaper > *:nth-child(2) {
+      grid-row: span 4;
+      font-size: 24px;
+      line-height: 36px; }
+  .grid.dashboard {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr; }
+    .grid.dashboard > *:nth-child(1) {
+      background: none; }
+    .grid.dashboard > *:nth-child(2) {
+      grid-column: 1;
+      grid-row: 2 / span 2; }
+    .grid.dashboard > *:nth-child(3) {
+      grid-column: 2 / span 1;
+      grid-row: span 2; }
+    .grid.dashboard > *:nth-child(4) {
+      grid-column: 3 / span 2;
+      grid-row: 2 / span 2; }
+    .grid.dashboard > *:nth-child(5) {
+      grid-column: 2 / span 1;
+      grid-row: 1 / span 2; }
+    .grid.dashboard > *:nth-child(6) {
+      grid-column: 4;
+      grid-row: 4 / span 1; }
