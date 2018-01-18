@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import './app.css';
 
+import CARDS from './DATA';
+
 const Button = (props) => (
     <button className={(props.on) ? "on" : null} onClick={() => props.handleClick(props.name)}>{props.name}</button>
 )
 
 const Block = (props) => (
     <div className="block"> 
-        <h1>{props.index}</h1>
-        <p>Conveniently revolutionize enterprise quality vectors with high standards in intellectual capital. Completely envisioneer extensive technology and timely markets. Phosfluorescently develop premium best practices whereas pandemic schemas. Dramatically incentivize resource-leveling growth strategies after progressive channels. Continually fabricate resource maximizing innovation before ethical meta-services.</p>
-        <p>Credibly enable sticky initiatives with cutting-edge deliverables. Uniquely productivate clicks-and-mortar web-readiness rather than dynamic potentialities. Progressively incentivize exceptional services via world-class materials. Globally foster cross-media processes without multimedia based outsourcing. Rapidiously orchestrate.</p>
+        <div className="content" dangerouslySetInnerHTML={{__html: props.content}}></div>
     </div>
 )
 
@@ -30,14 +30,16 @@ class App extends Component {
     
     render() {
         
-        let _layouts = ["swimlanes", "newspaper", "dashboard"],
-            _blocks = (data = ["block", "block", "block", "block", "block"]) => data.map((el, index) => <Block index={index + 1}/>);
+        let _layouts = ["swimlanes", "dashboard", "newspaper"],
+            _blocks = (data = CARDS) => data.map((el, index) => <Block index={index + 1} content={el.content}/>);
         
         return (
             
             <div className={"grid " + this.state.layout}>
                 <div className="block">
-                    {_layouts.map(name => <Button on={(this.state.layout === name) ? true : false} name={name} handleClick={this.handleClick} />)}
+                    <div className="content">
+                        {_layouts.map(name => <Button on={(this.state.layout === name) ? true : false} name={name} handleClick={this.handleClick} />)}
+                    </div>
                 </div>
                 { _blocks() }
             </div>

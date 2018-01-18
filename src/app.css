@@ -18,6 +18,13 @@ body {
 h1, p {
   margin: 0 0 22px; }
 
+h1 {
+  font-size: 9vw;
+  line-height: 10vw; }
+
+h2 {
+  line-height: 1.2em; }
+
 button {
   border: none;
   background: #0090ff;
@@ -41,11 +48,25 @@ button {
     background: rgba(0, 144, 255, 0.25); }
 
 .block {
+  position: relative;
   display: block;
   background: #fff;
-  padding: 22px;
-  margin-bottom: 8px;
-  overflow-y: scroll; }
+  overflow: hidden; }
+  .block:after {
+    content: "";
+    background: linear-gradient(bottom, rgba(255, 255, 255, 0.85), transparent);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 44px; }
+  .block .content {
+    position: relative;
+    display: block;
+    height: 100%;
+    width: 100%;
+    overflow-y: scroll;
+    padding: 22px; }
 
 .grid {
   padding: 12px;
@@ -63,7 +84,8 @@ button {
     grid-template-rows: 1fr 1fr 1fr 1fr;
     height: 100vh; }
     .grid.newspaper > *:nth-child(1) {
-      grid-row: span 4; }
+      grid-row: span 4;
+      background: none; }
     .grid.newspaper > *:nth-child(2) {
       grid-row: span 4;
       font-size: 24px;
@@ -73,6 +95,8 @@ button {
     grid-template-rows: 1fr 1fr 1fr 1fr; }
     .grid.dashboard > *:nth-child(1) {
       background: none; }
+      .grid.dashboard > *:nth-child(1):after {
+        content: none; }
     .grid.dashboard > *:nth-child(2) {
       grid-column: 1;
       grid-row: 2 / span 2; }
@@ -88,3 +112,23 @@ button {
     .grid.dashboard > *:nth-child(6) {
       grid-column: 4;
       grid-row: 4 / span 1; }
+
+.chart--donut {
+  /*
+    box-shadow: 0px 0px 3px 9px rgba($purple-001, 0.2);
+  
+    border-radius: 100%;
+*/ }
+  .chart--donut svg {
+    display: table; }
+    .chart--donut svg > * {
+      display: table-cell;
+      vertical-align: middle;
+      stroke-width: 7;
+      stroke-dashoffset: 0;
+      fill: transparent;
+      stroke: rgba(0, 144, 255, 0.25); }
+      .chart--donut svg > *:nth-child(2) {
+        stroke: #0090ff; }
+      .chart--donut svg > *:nth-child(3) {
+        stroke: #0065b3; }
