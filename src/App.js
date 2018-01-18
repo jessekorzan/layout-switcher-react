@@ -39,6 +39,7 @@ class App extends Component {
                 <div className="block">
                     <div className="content">
                         {_layouts.map(name => <Button on={(this.state.layout === name) ? true : false} name={name} handleClick={this.handleClick} />)}
+                        <p><a href="https://github.com/jessekorzan/layout-switcher-react">GitHub</a></p>
                     </div>
                 </div>
                 { _blocks() }
