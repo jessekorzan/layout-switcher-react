@@ -3,7 +3,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ### Demo: https://react-layout-switcher.netlify.com/
 ---
 
-React component example. Demonstrates re-flowing content into different views using CSS Grids.
+React component example. Demonstrates re-flowing content into different views using CSS Grids. Sorry, not much variance at the narrower viewports. More exciting on desktop.
 
 Light-weight prototype from exploring presentational UI @ Klue.
 
