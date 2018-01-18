@@ -7,4 +7,4 @@ React component example. Demonstrates re-flowing content into different views us
 
 Light-weight prototype from exploring presentational UI @ Klue.
 
-![demo](https://react-layout-switcher.netlify.com/react-layout-switcher.001.gif "gif")
+![demo](https://github.com/jessekorzan/layout-switcher-react/blob/master/public/react-layout-switcher.001.gif "gif")
