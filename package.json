@@ -1,6 +1,6 @@
 {
-  "name": "charts",
-  "version": "0.1.0",
+  "name": "layout-switcher-react",
+  "version": "1.0.0",
   "private": true,
   "dependencies": {
     "ie-version": "^0.1.0",
